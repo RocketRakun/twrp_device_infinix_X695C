@@ -18,7 +18,7 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
@@ -62,13 +62,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_TARGET_VNDK_VERSION := 30
 BOARD_VNDK_VERSION := current
-
-# Enable proper FBE v2 decryption for Android 11+ (especially for GSI)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.crypto.dm_default_key.options_format.version=2 \
-    ro.crypto.volume.filenames_mode=aes-256-cts \
-    ro.crypto.volume.metadata.method=dm-default-key \
-    ro.crypto.volume.options=::v2
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
