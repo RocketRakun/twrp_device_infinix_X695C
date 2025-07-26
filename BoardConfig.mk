@@ -1,7 +1,8 @@
 #
 # Copyright (C) 2020 The Android Open Source Project
 # Copyright (C) 2020 The TWRP Open Source Project
-# Copyright (C) 2020 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2025 The OrangeFox Recovery Project
+# Copyright (C) 2020 SebaUbuntu's TWRP device tree generatort
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -49,9 +50,6 @@ ENABLE_SCHEDBOOST := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mt6785
 TARGET_NO_BOOTLOADER := true
-
-# Assert
-TARGET_OTA_ASSERT_DEVICE := X695C,X695D,X695,Infinix-X695C,Infinix-X695D,Infinix-X695
 
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
@@ -156,26 +154,26 @@ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
-# UI: StatusBar & Theme
+# UI: StatusBar
 TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CPU_POS := "245"
 TW_CUSTOM_CLOCK_POS := "70"
 TW_CUSTOM_BATTERY_POS := "790"
+
+# TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_DEFAULT_LANGUAGE := en
+TW_EXTRA_LANGUAGES := false
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_MAX_BRIGHTNESS := 2460
 TW_FRAMERATE := 60
-
-# TWRP Features
 TW_USE_TOOLBOX := true
 TW_SKIP_COMPATIBILITY_CHECK := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
-TW_EXCLUDE_APEX := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_EXCLUDE_TWRPAPP := true
-TW_EXCLUDE_LPDUMB := true
+TW_NO_SCREEN_BLANK := true
+TW_NO_LEGACY_PROPS := true
+TW_NO_FASTBOOT_BOOT := true
 
 # Storage
 TW_HAS_MTP := true
@@ -200,11 +198,17 @@ TARGET_SCREEN_HEIGHT := 2460
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
-TW_INCLUDE_LPTOOLS := true
+
+# Exclude
+TW_EXCLUDE_APEX := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_EXCLUDE_TWRPAPP := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_LPDUMP := true
+TW_EXCLUDE_TZDATA := true
+TW_EXCLUDE_PYTHON := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_Infinix-X695C
 TARGET_RECOVERY_DEVICE_MODULES := libinit_Infinix-X695C
-
-# Maintainer
-TW_DEVICE_VERSION := Infinix Note 10 Pro | ExcaliburXD

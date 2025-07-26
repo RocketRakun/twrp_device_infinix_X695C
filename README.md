@@ -1,4 +1,4 @@
-# TWRP device tree for Infinix Note 10 Pro ID (X695C,X695D,X695)
+# Orangefox Recovery device tree for Infinix Note 10 Pro ID (X695C,X695D,X695)
 
 ## Status
 
