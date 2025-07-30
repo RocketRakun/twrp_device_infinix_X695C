@@ -140,3 +140,8 @@ on property:twrp.decrypt.done=true
 on boot
     start boot-hal-1-1
     start health-hal-2-1
+
+# Prevent TWRP reboot loop to itself
+on post-fs-data
+    rm /cache/recovery/command
+    rm /cache/recovery/log
