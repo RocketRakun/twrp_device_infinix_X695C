@@ -87,6 +87,18 @@ PRODUCT_PACKAGES += \
     mtk_plpath_utils \
     mtk_plpath_utils.recovery
 
+# Gatekeeper 
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-service
+
+# Keymaster Beanpod
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.0-service.beanpod
+
+# TEE Daemon
+PRODUCT_PACKAGES += \
+    teei_daemon
+
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
